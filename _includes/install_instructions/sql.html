@@ -1,56 +1,77 @@
-<div class="card mb-2" id="sql">
-  <div class="card-header d-flex align-items-center justify-content-between">
-    <h5>SQL</h5>
-    <ul class="nav nav-pills os-tabs" role="tablist">
-      <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows" data-bs-target="#sql-windows" aria-controls="Windows" role="tab" data-bs-toggle="tab">Windows</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos" data-bs-target="#sql-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux" data-bs-target="#sql-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button></li>
-      <li role="presentation" class="nav-item"><button class="nav-link" data-os="web" data-bs-target="#sql-web" aria-controls="Web" role="tab" data-bs-toggle="tab">Web</button></li>
+<div id="sql">
+  <h3>SQLite</h3>
+  <ul>
+    <li>
+      SQL is a specialized programming language used with databases. We use the database manager called SQLite in our lessons.
+    </li>
+    <li>
+      We will use a database called Survey.db for the workshop. Download it from here: <a href="https://swcarpentry.github.io/sql-novice-survey/files/survey.db" target="_blank" rel="noopener noreferrer">https://swcarpentry.github.io/sql-novice-survey/files/survey.db</a>
+      and place it somewhere easily accessible on your computer, such as your document folder or desktop. It will download directly, check your downloads folder.
+      If you have issues downloading the file, copy and paste the url in a new browser window.
+    </li>
+    <li>
+      The program we will use to interact with the SQLite database is a GUI called DB Browser - see below for operating system instructions.
+    </li>
+    <li>
+      Note that you will require a laptop to participate in the workshop, so do the setup on a laptop you are familiar with, if you can.
+    </li>
+  </ul>
+  <div>
+    <ul class="nav nav-tabs os-tabs" role="tablist" aria-label="Operating system">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="sql-windows-tab"
+                data-os="windows" data-bs-toggle="tab"
+                data-bs-target="#sql-windows" type="button" role="tab"
+                aria-controls="sql-windows" aria-selected="true">
+          Windows
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="sql-macos-tab"
+                data-os="macos" data-bs-toggle="tab"
+                data-bs-target="#sql-macos" type="button" role="tab"
+                aria-controls="sql-macos" aria-selected="false">
+          MacOS
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="sql-linux-tab"
+                data-os="linux" data-bs-toggle="tab"
+                data-bs-target="#sql-linux" type="button" role="tab"
+                aria-controls="sql-linux" aria-selected="false">
+          Linux
+        </button>
+      </li>
     </ul>
-  </div>
-  <div class="card-body">
-
-  <p>
-    SQL is a specialized programming language used with databases.  We
-    use a database manager called
-    <a href="https://www.sqlite.org/">SQLite</a> in our lessons.
-  </p>
-
-  <div class="tab-content">
-    <article role="tabpanel" class="tab-pane active" id="sql-windows">
-    <ul>
-        <li>Run "Git Bash" from the Start menu</li>
-        <li>Copy the following <code>curl -fsSL  {{site.url}}{{site.baseurl}}/getsql.sh | bash</code></li>
-        <li>Paste it into the window that Git Bash opened. If you're unsure, ask an instructor for help</li>
-        <li>You should see something like <code>3.27.2 2019-02-25 16:06:06 ...</code></li>
-    </ul>
-
-        <p>If you want to do this manually, download <a href="https://www.sqlite.org/2019/sqlite-tools-win32-x86-3270200.zip">sqlite3</a>, make a bin directory in the user's home directory, unzip sqlite3, move it into the bin directory, and then add the bin directory to the path.</p>
-
-    </article>
-    <article role="tabpanel" class="tab-pane" id="sql-macos">
-    <p>
-        SQLite comes pre-installed on macOS.
-    </p>
-    </article>
-    <article role="tabpanel" class="tab-pane" id="sql-linux">
-    <p>
-        SQLite comes pre-installed on Linux.
-    </p>
-    </article>
-    <article role="tabpanel" class="tab-pane" id="sql-web">
-    <ul>
-        <li>In case of problems: register for an account at <a href="https://www.pythonanywhere.com/">https://www.pythonanywhere.com</a></li>
-        <li>Download <a href="http://swcarpentry.github.io/sql-novice-survey/files/survey.db">survey.db</a></li>
-        <li>Click on files and upload survey.db</li>
-        <li>Click on dashboard and Choose new console <code>bash</code></li>
-    </ul>
-    </article>
-  </div>
-
-  <p><strong>If you installed Anaconda, it also has a copy of SQLite
-      <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
-      Instructors will provide a workaround for it if needed.</strong></p>
-
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="sql-windows"
+               aria-labelledby="sql-windows-tab" tabindex="0">
+        <ul>
+          <li>Download the <a href="https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.13.1/DB.Browser.for.SQLite-v3.13.1-win64.msi">Windows installer for DB Browser</a>.</li>
+          <li>It will download directly, check your downloads folder and install it on your laptop.</li>
+          <li>
+            <b>NOTE:</b> If you are unable to get admin rights on your laptop, you can download a
+            <a href="https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.13.1/SQLiteDatabaseBrowserPortable_3.13.1.paf.exe">"portable" version of DB browser</a> that does not require admin to install.
+          </li>
+          <li>But please do install the regular version of DB Browser if you can.</li>
+        </ul>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="sql-macos"
+               aria-labelledby="sql-macos-tab" tabindex="0">
+        <ul>
+          <li>Go to the <a href="https://sqlitebrowser.org/dl/">DB Browser download page</a>.</li>
+          <li>Scroll down to the MacOS section and download and install the version of DB Browser that suits your mac.</li>
+          <li><b>NOTE:</b> If you are unsure if you have an Intel or an Apple Silicon mac, check <a href="https://support.apple.com/en-us/116943">this help page from apple</a>.</li>
+        </ul>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="sql-linux"
+               aria-labelledby="sql-linux-tab" tabindex="0">
+        <ul>
+          <li>Go to the <a href="https://sqlitebrowser.org/dl/">DB Browser download page</a>.</li>
+          <li>Scroll down to the Linux section.</li>
+          <li>Download and install the AppImage or Snap package.</li>
+        </ul>
+      </article>
+    </div>
   </div>
 </div>
